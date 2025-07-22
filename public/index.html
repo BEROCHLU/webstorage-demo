@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Server Demo</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 20px;
+            padding: 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        form {
+            margin: 10px 0;
+        }
+
+        input[type="file"],
+        input[type="submit"] {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        fieldset {
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+        }
+
+        legend {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p,
+        ol {
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 600px) {
+
+            input[type="file"],
+            input[type="submit"] {
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Welcome to the Web Server Demo</h2>
+    <p><strong>Instructions:</strong></p>
+    <ol>
+        <li>Tap <strong>"Choose File"</strong> to select a file from your phone.</li>
+        <li>Tap <strong>"Upload"</strong> to send the file to the server.</li>
+        <li>Tap <strong>"Uploaded File List"</strong> to see uploaded files.</li>
+        <li>Tap a file name to download it, or long-press to save it.</li>
+    </ol>
+
+    <fieldset>
+        <legend>Upload a File</legend>
+        <form action="/upload_action" method="post" enctype="multipart/form-data" target="_blank">
+            <input type="file" name="upfile" id="file">
+            <input type="submit" value="Upload">
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>Download Files</legend>
+        <p>The file list will open in a new browser tab.</p>
+        <a href="{{ url }}serve" target="_blank" rel="noopener">📁 Uploaded File List</a>
+        <ul>
+            <li>Tap a file name to download it ⬇️</li>
+            <li>Or long-press the link and choose <em>"Download link"</em></li>
+        </ul>
+    </fieldset>
+
+</body>
+
+</html>
