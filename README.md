@@ -73,5 +73,5 @@ If local debug mode is enabled (see Configuration), the server binds to 127.0.0.
 ## License
 This project does not include a license. See individual source files for any usage notes.
 
-[Flask]: https://palletsprojects.com/p/flask/
-[Flask-AutoIndex]: https://github.com/blue-yonder/flask-autoindex
+[Flask]: https://github.com/pallets/flask
+[Flask-AutoIndex]: https://github.com/general03/flask-autoindex
