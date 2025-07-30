@@ -1,1 +1,2 @@
-public/user/
+public/user/*
+!public/user/.keep
